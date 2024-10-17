@@ -1,5 +1,3 @@
-version: '3'
-
 services:
   php-fpm:
     container_name: php-fpm
@@ -37,6 +35,8 @@ services:
         - POSTGRES_PASSWORD=${DB_PASSWORD}
       volumes:
         - ./docker/postgres/datadir:/var/lib/postgresql/data
+      ports:
+        - 5432:5432
 networks:
   internal:
     driver: bridge

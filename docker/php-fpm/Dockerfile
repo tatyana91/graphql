@@ -4,7 +4,7 @@ RUN apt-get update
 RUN apt-get install -y wget git unzip libpq-dev libicu-dev libpng-dev libzip-dev libjpeg-dev libfreetype6-dev;
 RUN pecl install xdebug-3.3.1 && docker-php-ext-enable xdebug
 
-RUN docker-php-ext-install pdo_mysql \
+RUN docker-php-ext-install pdo_mysql pdo_pgsql \
     && docker-php-ext-install mysqli \
     && docker-php-ext-install zip \
     && docker-php-ext-install gd \
